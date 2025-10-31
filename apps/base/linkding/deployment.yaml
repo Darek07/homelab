@@ -13,8 +13,15 @@ spec:
         app: linkding
     spec:
       containers:
-      - name: linkding
-        image: ghcr.io/sissbruecker/linkding:1.44.1
-        ports:
-        - containerPort: 9090
+        - name: linkding
+          image: ghcr.io/sissbruecker/linkding:1.44.1
+          ports:
+            - containerPort: 9090
+          volumesMounts:
+            - mountPath: "/etc/linkding/data"
+              name: data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: linkding-data
 

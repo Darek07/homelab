@@ -12,6 +12,9 @@ spec:
       labels:
         app: linkding
     spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
       containers:
         - name: linkding
           image: ghcr.io/sissbruecker/linkding:1.44.1
@@ -20,6 +23,8 @@ spec:
           volumeMounts:
             - mountPath: "/etc/linkding/data"
               name: data
+          securityContext:
+            allowPrivilegeEscalation: false
       volumes:
         - name: data
           persistentVolumeClaim:

@@ -4,3 +4,4 @@ namespace: linkding
 resources:
   - ../../base/linkding/
   - tunnel-token.yaml
+  - secrets.yaml

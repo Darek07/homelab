@@ -24,9 +24,9 @@ spec:
           volumeMounts:
             - mountPath: "/etc/linkding/data"
               name: data
-					envFrom:
-						- secretRef:
-								name: linkding
+          envFrom:
+            - secretRef:
+              name: linkding
           securityContext:
             allowPrivilegeEscalation: false
       volumes:

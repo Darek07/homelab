@@ -26,7 +26,7 @@ spec:
               name: data
           envFrom:
             - secretRef:
-              name: linkding
+                name: linkding
           securityContext:
             allowPrivilegeEscalation: false
       volumes:

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: audiobookshelf-svc
+  name: audiobookshelf-svc
+  namespace: audiobookshelf
+spec:
+  ports:
+    - port: 3005
+      protocol: TCP
+      targetPort: 3005
+  selector:
+    app: audiobookshelf
+  type: ClusterIP

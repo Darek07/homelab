@@ -5,3 +5,4 @@ metadata:
   namespace: audiobookshelf
 data:
   TZ: Poland/Warsaw
+  PORT: 3005

@@ -21,4 +21,4 @@ spec:
             - containerPort: 3005
           envFrom:
             - configMapRef:
-                name: audiobookself-cm
+                name: audiobookshelf-cm

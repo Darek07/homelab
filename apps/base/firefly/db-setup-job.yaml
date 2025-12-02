@@ -14,7 +14,7 @@ spec:
         command: ["/bin/bash", "/scripts/db-setup.sh"]
         envFrom:
           - secretRef:
-              name: db-credentials
+              name: firefly-db-credentials
         volumeMounts:
           - mountPath: /scripts
             name: db-setup-script

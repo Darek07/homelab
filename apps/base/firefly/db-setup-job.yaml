@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: firefly-db-setup
+  namespace: firefly
+spec:
+  completions: 1
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: firefly-db-setup
+        image: mariadb:12.1.2
+        command: ["/bin/bash", "/scripts/db-setup.sh"]
+        envFrom:
+          - secretRef:
+              name: db-credentials
+        volumeMounts:
+          - mountPath: /scripts
+            name: db-setup-script
+      volumes:
+        - name: db-setup-script
+          configMap:
+            name: firefly-db-setup-script

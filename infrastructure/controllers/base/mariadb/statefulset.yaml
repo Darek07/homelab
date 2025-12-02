@@ -17,21 +17,24 @@ spec:
     spec:
       terminationGracePeriodSeconds: 120
       containers:
-      - name: mariadb
-        image: mariadb:12.1.2
-        ports:
-        - containerPort: 3306
-        volumeMounts:
-        - name: mariadb-pvc
-          mountPath: /var/lib/mysql
+        - name: mariadb
+          image: mariadb:12.1.2
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: mariadb-pvc
+              mountPath: /var/lib/mysql
+          envFrom:
+            - secretRef:
+                name: mariadb-root
   volumeClaimTemplates:
-  - metadata:
-      name: mariadb-pvc
-      namespace: mariadb
-    spec:
-      accessModes:
-        - ReadWriteOnce
-      storageClassName: local-path-retain
-      resources:
-        requests:
-          storage: 5Gi
+    - metadata:
+        name: mariadb-pvc
+        namespace: mariadb
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: local-path-retain
+        resources:
+          requests:
+            storage: 5Gi

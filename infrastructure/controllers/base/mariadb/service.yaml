@@ -7,8 +7,8 @@ metadata:
     app: mariadb-headless-svc
 spec:
   ports:
-  - port: 3306
-    name: mariadb
+    - port: 3306
+      name: mariadb
   selector:
     app: mariadb
   type: ClusterIP

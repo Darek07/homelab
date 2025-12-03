@@ -10,7 +10,7 @@ data:
 
     mariadb -h mariadb-0.mariadb-headless-svc.mariadb.svc.cluster.local -u root -p"${MARIADB_ROOT_PASSWORD}" <<EOF
     CREATE DATABASE IF NOT EXISTS firefly;
-    CREATE USER IF NOT EXISTS 'firefly_user'@'%' IDENTIFIED BY '${FIREFLY_USER_PASSWORD}';
+    CREATE USER IF NOT EXISTS 'firefly_user'@'%' IDENTIFIED BY '${DB_FIREFLY_USER_PASSWORD}';
     GRANT ALL ON firefly.* TO 'firefly_user'@'%';
     FLUSH PRIVILEGES;
     EOF

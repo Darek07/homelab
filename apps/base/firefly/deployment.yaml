@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: firefly
+  name: firefly
+  namespace: firefly
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: firefly
+  template:
+    metadata:
+      labels:
+        app: firefly
+    spec:
+      securityContext:
+        fsGroup: 33  # www-data group ID
+        runAsUser: 33  # www-data user ID
+        runAsGroup: 33  # www-data group ID
+      containers:
+        - image: fireflyiii/core:version-6.4.9
+          name: fireflyiii
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - secretRef:
+                name: firefly-secrets
+            - configMapRef:
+                name: firefly-cm
+          volumeMounts:
+            - mountPath: /var/www/html/storage/upload
+              name: firefly-upload
+          securityContext:
+            allowPrivilegeEscalation: false
+      volumes:
+        - name: firefly-upload
+          persistentVolumeClaim:
+            claimName: firefly-upload

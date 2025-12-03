@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: firefly-cm
+  namespace: firefly
+data:
+  DB_CONNECTION: mysql
+  DB_DATABASE: firefly
+  DB_HOST: mariadb-0.mariadb-headless-svc.mariadb.svc.cluster.local
+  DB_PORT: "3306"
+  DB_USERNAME: firefly_user

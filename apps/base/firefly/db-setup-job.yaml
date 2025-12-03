@@ -9,15 +9,23 @@ spec:
     spec:
       restartPolicy: OnFailure
       containers:
-      - name: firefly-db-setup
-        image: mariadb:12.1.2
-        command: ["/bin/bash", "/scripts/db-setup.sh"]
-        envFrom:
-          - secretRef:
-              name: firefly-db-credentials
-        volumeMounts:
-          - mountPath: /scripts
-            name: db-setup-script
+        - name: firefly-db-setup
+          image: mariadb:12.1.2
+          command: ["/bin/bash", "/scripts/db-setup.sh"]
+          env:
+            - name: MARIADB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-root-credentials
+                  key: MARIADB_ROOT_PASSWORD
+            - name: DB_FIREFLY_USER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: firefly-secrets
+                  key: DB_FIREFLY_USER_PASSWORD
+          volumeMounts:
+            - mountPath: /scripts
+              name: db-setup-script
       volumes:
         - name: db-setup-script
           configMap:

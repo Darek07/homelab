@@ -16,6 +16,10 @@ spec:
         app: mariadb
     spec:
       terminationGracePeriodSeconds: 120
+      securityContext:
+        fsGroup: 999  # mysql group ID
+        runAsUser: 999  # mysql user ID
+        runAsGroup: 999  # mysql group ID
       containers:
         - name: mariadb
           image: mariadb:12.1.2
@@ -27,6 +31,8 @@ spec:
           envFrom:
             - secretRef:
                 name: mariadb-root
+          securityContext:
+            allowPrivilegeEscalation: false
   volumeClaimTemplates:
     - metadata:
         name: mariadb-pvc

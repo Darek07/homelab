@@ -8,3 +8,4 @@ resources:
   - service.yaml
   - storage.yaml
   - configmap.yaml
+  - cloudflared.yaml

@@ -5,3 +5,4 @@ resources:
   - ../../base/firefly/
   - db-root-credentials.yaml
   - firefly-secrets.yaml
+  - tunnel-token.yaml

@@ -25,10 +25,19 @@ spec:
           ports:
             - containerPort: 8080
           envFrom:
-            - secretRef:
-                name: firefly-secrets
             - configMapRef:
                 name: firefly-cm
+          env:
+            - name: APP_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: firefly-secrets
+                  key: APP_KEY
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: firefly-secrets
+                  key: DB_FIREFLY_USER_PASSWORD
           volumeMounts:
             - mountPath: /var/www/html/storage/upload
               name: firefly-upload

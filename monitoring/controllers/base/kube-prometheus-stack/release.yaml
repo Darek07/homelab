@@ -26,6 +26,8 @@ spec:
         target:
           kind: PrometheusRule
   values:
+    alertmanager:
+      enabled: false
     grafana:
       enabled: false
       admin:

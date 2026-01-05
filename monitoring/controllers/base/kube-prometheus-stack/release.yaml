@@ -45,3 +45,8 @@ spec:
       prometheusSpec:
         scrapeInterval: 60s
         evaluationInterval: 60s
+        resources:
+          requests:
+            memory: 512Mi
+          limits:
+            memory: 512Mi

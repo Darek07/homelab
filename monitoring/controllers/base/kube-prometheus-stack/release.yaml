@@ -41,3 +41,7 @@ spec:
           - secretName: grafana-tls
             hosts:
               - grafana.kaermorhenlab.org
+    prometheus:
+      prometheusSpec:
+        scrapeInterval: 60s
+        evaluationInterval: 60s

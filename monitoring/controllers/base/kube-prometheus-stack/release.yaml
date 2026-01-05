@@ -27,6 +27,7 @@ spec:
           kind: PrometheusRule
   values:
     grafana:
+      enabled: false
       admin:
         existingSecret: grafana-admin-credentials
         userKey: admin-user

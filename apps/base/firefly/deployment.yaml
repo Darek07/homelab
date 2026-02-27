@@ -43,11 +43,17 @@ spec:
                 secretKeyRef:
                   name: firefly-secrets
                   key: APP_URL
+            - name: STATIC_CRON_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: firefly-secrets
+                  key: STATIC_CRON_TOKEN
           volumeMounts:
             - mountPath: /var/www/html/storage/upload
               name: firefly-upload
           securityContext:
             allowPrivilegeEscalation: false
+          resources: {}
       volumes:
         - name: firefly-upload
           persistentVolumeClaim:

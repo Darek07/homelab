@@ -4,5 +4,5 @@ namespace: firefly
 resources:
   - ../../base/firefly/
   - db-root-credentials.yaml
-  - firefly-secrets.yaml
+  - secrets.yaml
   - tunnel-token.yaml

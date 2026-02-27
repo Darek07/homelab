@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: firefly-cronjob
+spec:
+  schedule: 0 9 * * *
+  jobTemplate:
+    metadata:
+      name: firefly-cronjob
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - image: curlimages/curl:8.18.0
+              name: firefly-cronjob
+              command: 
+                - /bin/sh
+                - -c
+                - curl http://firefly:8080/api/v1/cron/$STATIC_CRON_TOKEN
+              env:
+                - name: STATIC_CRON_TOKEN
+                  valueFrom:
+                    secretKeyRef:
+                      name: firefly-secrets
+                      key: STATIC_CRON_TOKEN

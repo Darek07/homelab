@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: firefly-cronjob
 spec:
-  schedule: 0 9 * * *
+  schedule: 0 10 * * *
   jobTemplate:
     metadata:
       name: firefly-cronjob
@@ -14,7 +14,7 @@ spec:
           containers:
             - image: curlimages/curl:8.18.0
               name: firefly-cronjob
-              command: 
+              command:
                 - /bin/sh
                 - -c
                 - curl http://firefly:8080/api/v1/cron/$STATIC_CRON_TOKEN

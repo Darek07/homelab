@@ -3,7 +3,8 @@ kind: CronJob
 metadata:
   name: firefly-cronjob
 spec:
-  schedule: 0 10 * * *
+  schedule: 0 8 * * *
+  startingDeadlineSeconds: 7200
   jobTemplate:
     metadata:
       name: firefly-cronjob

@@ -26,3 +26,5 @@ spec:
           resources:
             requests:
               storage: 5Gi
+    grafana:
+      enabled: false

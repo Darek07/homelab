@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
 #  - kube-prometheus-stack
 #  - victoria-metrics-cluster
+  - victoria-metrics-k8s-stack

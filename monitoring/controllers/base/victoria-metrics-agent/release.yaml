@@ -19,3 +19,5 @@ spec:
   upgrade:
     crds: CreateReplace
   values:
+    remoteWrite:
+      - url: "http://victoria-metrics-single-server.monitoring.svc:8429/api/v1/write"

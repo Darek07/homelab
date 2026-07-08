@@ -21,3 +21,6 @@ spec:
   values:
     remoteWrite:
       - url: "http://victoria-metrics-single-server.monitoring.svc:8428/api/v1/write"
+    config:
+      global:
+        scrape_interval: 60s

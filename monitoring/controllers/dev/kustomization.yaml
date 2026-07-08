@@ -4,6 +4,6 @@ kind: Kustomization
 resources:
 #  - kube-prometheus-stack
 #  - victoria-metrics-cluster
+  # - victoria-metrics-agent
 #  - victoria-metrics-k8s-stack
   - victoria-metrics-single
-  - victoria-metrics-agent

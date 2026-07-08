@@ -12,7 +12,7 @@ spec:
         spec:
           restartPolicy: OnFailure
           containers:
-            - image: curlimages/curl:8.18.0
+            - image: curlimages/curl:8.21.0
               name: firefly-cronjob
               command:
                 - /bin/sh

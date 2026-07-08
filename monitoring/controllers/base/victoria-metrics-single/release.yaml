@@ -102,5 +102,5 @@ spec:
                   regex: kube-state-metrics
                   action: keep
                 - source_labels: [__meta_kubernetes_endpoint_port_name]
-                  regex: http-metrics
+                  regex: http
                   action: keep

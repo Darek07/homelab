@@ -20,6 +20,8 @@ spec:
     crds: CreateReplace
   values:
     server:
+      persistentVolume:
+        size: 2Gi
       scrape:
         enabled: true
         config:

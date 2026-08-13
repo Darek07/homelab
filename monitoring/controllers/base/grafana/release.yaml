@@ -25,6 +25,13 @@ spec:
       existingSecret: grafana-admin-credentials
       userKey: admin-user
       passwordKey: admin-password
+    resources: {}  # CHANGEME: set resources based on real usage
+    #  limits:
+    #    cpu: 100m
+    #    memory: 128Mi
+    #  requests:
+    #    cpu: 100m
+    #    memory: 128Mi
     datasources:
       datasources.yaml:
         apiVersion: 1
@@ -33,10 +40,22 @@ spec:
           type: prometheus
           url: http://victoria-metrics-single-server:8428
           isDefault: true
-    resources: {}  # CHANGEME: set resources based on real usage
-    #  limits:
-    #    cpu: 100m
-    #    memory: 128Mi
-    #  requests:
-    #    cpu: 100m
-    #    memory: 128Mi
+    ## `path` must be /var/lib/grafana/dashboards/<provider_name>
+    dashboardProviders:
+     dashboardproviders.yaml:
+       apiVersion: 1
+       providers:
+       - name: 'default'
+         orgId: 1
+         folder: 'default'
+         type: file
+         disableDeletion: false
+         editable: true
+         updateIntervalSeconds: 60
+         options:
+           path: /var/lib/grafana/dashboards
+    defaultCurlOptions: "-sf"
+    dashboards:
+      default:
+        victoriametrics-single-node:
+          url: https://raw.githubusercontent.com/VictoriaMetrics/VictoriaMetrics/master/dashboards/victoriametrics.json

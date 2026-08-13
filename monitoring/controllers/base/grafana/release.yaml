@@ -31,7 +31,7 @@ spec:
         datasources:
         - name: Victoriametrics
           type: prometheus
-          url: http://victoria-metrics-single-server
+          url: http://victoria-metrics-single-server:8428
           isDefault: true
     resources: {}  # CHANGEME: set resources based on real usage
     #  limits:

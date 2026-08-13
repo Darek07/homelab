@@ -18,11 +18,21 @@ spec:
     crds: Create
   upgrade:
     crds: CreateReplace
+  driftDetection:
+    mode: enabled
   values:
     admin:
       existingSecret: grafana-admin-credentials
       userKey: admin-user
       passwordKey: admin-password
+    datasources:
+      datasources.yaml:
+        apiVersion: 1
+        datasources:
+        - name: Victoriametrics
+          type: prometheus
+          url: http://victoria-metrics-single-server
+          isDefault: true
     resources: {}  # CHANGEME: set resources based on real usage
     #  limits:
     #    cpu: 100m

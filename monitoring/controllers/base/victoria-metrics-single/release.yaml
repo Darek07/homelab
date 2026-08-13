@@ -18,6 +18,8 @@ spec:
     crds: Create
   upgrade:
     crds: CreateReplace
+  driftDetection:
+    mode: enabled
   values:
     server:
       persistentVolume:

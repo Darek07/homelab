@@ -46,13 +46,13 @@ spec:
        providers:
        - name: 'default'
          orgId: 1
-         folder: 'default'
+         folder: ''
          type: file
          disableDeletion: false
          editable: true
          updateIntervalSeconds: 60
          options:
-           path: /var/lib/grafana/dashboards
+           path: /var/lib/grafana/dashboards/default
     defaultCurlOptions: "-sf"
     dashboards:
       default:

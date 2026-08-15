@@ -62,6 +62,8 @@ spec:
               relabel_configs:
                 - action: labelmap
                   regex: __meta_kubernetes_node_label_(.+)
+                - source_labels: [__meta_kubernetes_node_name]
+                  target_label: node
             - job_name: "kubernetes-nodes-cadvisor"
               scheme: https
               tls_config:
@@ -74,6 +76,8 @@ spec:
               relabel_configs:
                 - action: labelmap
                   regex: __meta_kubernetes_node_label_(.+)
+                - source_labels: [__meta_kubernetes_node_name]
+                  target_label: node
                 - source_labels: [__metrics_path__]
                   target_label: metrics_path
               metric_relabel_configs:
@@ -95,7 +99,7 @@ spec:
                   regex: '^/system\.slice/(.+)\.service$'
                   target_label: systemd_service_name
                   replacement: '${1}'
-              honor_timestamps: false 
+              honor_timestamps: false
             - job_name: "kube-state-metrics"
               kubernetes_sd_configs:
                 - role: endpoints
@@ -105,4 +109,14 @@ spec:
                   action: keep
                 - source_labels: [__meta_kubernetes_endpoint_port_name]
                   regex: http
+                  action: keep
+            - job_name: "prometheus-node-exporter"
+              kubernetes_sd_configs:
+                - role: endpoints
+              relabel_configs:
+                - source_labels: [__meta_kubernetes_service_label_app_kubernetes_io_name]
+                  regex: prometheus-node-exporter
+                  action: keep
+                - source_labels: [__meta_kubernetes_endpoint_port_name]
+                  regex: metrics
                   action: keep

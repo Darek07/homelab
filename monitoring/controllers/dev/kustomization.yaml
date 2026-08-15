@@ -5,6 +5,7 @@ resources:
   - grafana
 #  - kube-prometheus-stack
   - kube-state-metrics
+  - prometheus-node-exporter
 #  - victoria-metrics-cluster
 #  - victoria-metrics-agent
 #  - victoria-metrics-k8s-stack

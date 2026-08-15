@@ -116,6 +116,3 @@ spec:
                 - source_labels: [__meta_kubernetes_endpoint_port_name]
                   regex: metrics
                   action: keep
-                - action: replace
-                  source_labels: [__meta_kubernetes_pod_node_name]
-                  target_label: nodename

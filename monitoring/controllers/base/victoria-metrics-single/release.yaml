@@ -62,6 +62,8 @@ spec:
               relabel_configs:
                 - action: labelmap
                   regex: __meta_kubernetes_node_label_(.+)
+                - source_labels: [__meta_kubernetes_node_name]
+                  target_label: node
             - job_name: "kubernetes-nodes-cadvisor"
               scheme: https
               tls_config:

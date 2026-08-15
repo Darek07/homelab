@@ -21,3 +21,8 @@ spec:
   driftDetection:
     mode: enabled
   values:
+    tolerations:
+      - effect: NoSchedule
+        operator: Exists
+      - effect: CriticalAddonsOnly
+        operator: Exists

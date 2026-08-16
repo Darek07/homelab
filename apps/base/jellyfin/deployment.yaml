@@ -15,6 +15,10 @@ spec:
       labels:
         app: jellyfin
     spec:
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+        runAsGroup: 1000
       containers:
         - image: ghcr.io/jellyfin/jellyfin:10.11.11
           name: jellyfin
@@ -29,6 +33,8 @@ spec:
               mountPath: /cache
             - name: media
               mountPath: /media
+          securityContext:
+            allowPrivilegeEscalation: false
       volumes:
         - name: config
           persistentVolumeClaim:

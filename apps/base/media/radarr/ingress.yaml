@@ -1,17 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: jellyfin
+  name: radarr
   namespace: media
 spec:
   ingressClassName: traefik
   rules:
-    - host: jellyfin.local
+    - host: radarr.local
       http:
         paths:
           - backend:
               service:
-                name: jellyfin
+                name: radarr
                 port:
                   number: 80
             path: /

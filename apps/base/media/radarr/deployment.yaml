@@ -52,7 +52,8 @@ spec:
             allowPrivilegeEscalation: false
       volumes:
         - name: run
-          emptyDir: {}
+          emptyDir:
+            sizeLimit: 500Mi
         - name: config
           persistentVolumeClaim:
             claimName: radarr-config

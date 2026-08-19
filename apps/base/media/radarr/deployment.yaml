@@ -21,7 +21,7 @@ spec:
         runAsUser: 2001
         runAsGroup: 2000
       initContainers:
-        - image: busybox:1.37.0
+        - image: busybox:1.38.0
           name: permissions
           command: ["sh", "-c", "chown 2001:2000 /run"]
           securityContext:

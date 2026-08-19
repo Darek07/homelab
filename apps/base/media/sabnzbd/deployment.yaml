@@ -30,7 +30,7 @@ spec:
             - name: run
               mountPath: /run
       containers:
-        - image: lscr.io/linuxserver/sabnzbd:5.1.0-ls267
+        - image: lscr.io/linuxserver/sabnzbd:5.1.1-ls267
           name: sabnzbd
           ports:
             - containerPort: 8080

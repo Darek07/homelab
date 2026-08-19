@@ -48,7 +48,7 @@ spec:
               mountPath: /config
             - name: usenet
               mountPath: /usenet
-              subpath: usenet
+              subPath: usenet
           securityContext:
             allowPrivilegeEscalation: false
       volumes:

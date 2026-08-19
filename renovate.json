@@ -4,6 +4,9 @@
     "fileMatch": [
       "\\.yaml$"
     ]
-  }
+  },
+  "assignees": [
+    "31630419+Darek07@users.noreply.github.com"
+  ]
 }
 

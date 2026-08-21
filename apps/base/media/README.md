@@ -2,6 +2,8 @@
 
 Shared `media` namespace: jellyfin, radarr, sabnzbd, sharing the `media-data` PVC mounted at `/data`.
 
+Apps that only need part of the shared volume (jellyfin, sabnzbd) use `subPath` to scope their mount to just that subtree, but keep the **same absolute path** as the full `/data` mount (e.g. sabnzbd mounts `subPath: usenet` at `mountPath: /data/usenet`, not `/usenet`) — so Radarr sees identical paths to what sabnzbd reports, with no remote path mapping needed. Keep this pattern for any future app added here.
+
 ## Post-deploy manual setup
 
 Some app settings aren't configurable via manifests/env vars and must be set once through each app's web UI after first deploy (persisted on their `/config` PVC afterwards).
@@ -19,8 +21,8 @@ Since it's shared storage, a folder only needs to be created once — it's immed
 ### sabnzbd
 
 Config → Folders:
-- Temporary Download Folder: `/usenet/incomplete`
-- Completed Download Folder: `/usenet`
+- Temporary Download Folder: `/data/usenet/incomplete`
+- Completed Download Folder: `/data/usenet`
 
 Config → Categories:
 - `movies` → Folder: `movies`

@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Secret
 metadata:
     name: tunnel-token
+    namespace: media
 data:
     token: ENC[AES256_GCM,data:K3oviDoGawNdEVkq/J8zfgBlwjVeum8O9Joxavfrg6FvwDl66nSWbL354E7i81csxB9THnGeNBnPikoulYQU1q2L+CQW9OVUnGrW0LaUBgIC52YoJ30aH0fZrXiF8o9kwv68k/OOkXvnMGuU5hohUSilTdRttSad0O/BtOK8airZ420ON3dVFDpRCF6NpfJ8M2liYKqT55+lyWIOa9YaOe/sNISVIImF/ah8LkdAAlycib9YSVhXxWtvh5hO1GT6aTZh6ur/r/7l8N2tPPKj8Ol8FBc1TDu1vOKvMQTYCT1jbfe7mZ4hGE9m1tRVlXevucXpg9VZ600=,iv:n8xfkFw3NQQuwT64kyOZTZzwUDW0zGfB43keb1urbIs=,tag:N0HpIHJ4oHvuKN3Zzkue9A==,type:str]
 sops:

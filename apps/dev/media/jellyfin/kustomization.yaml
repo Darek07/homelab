@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - ../../../base/media/jellyfin/
+  - tunnel-token.yaml

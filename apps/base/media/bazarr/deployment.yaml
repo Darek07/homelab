@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bazarr
+  name: bazarr
+  namespace: media
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bazarr
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: bazarr
+    spec:
+      securityContext:
+        fsGroup: 2000
+        runAsUser: 2003
+        runAsGroup: 2000
+      containers:
+        - image: lscr.io/linuxserver/bazarr:v1.6.0-ls360
+          name: bazarr
+          ports:
+            - containerPort: 6767
+          resources: {}
+          envFrom:
+            - configMapRef:
+                name: media-permissions
+          env:
+            - name: PUID
+              value: "2003"
+          volumeMounts:
+            - name: config
+              mountPath: /config
+          securityContext:
+            allowPrivilegeEscalation: false
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: bazarr-config

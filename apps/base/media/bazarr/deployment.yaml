@@ -46,6 +46,9 @@ spec:
               mountPath: /run
             - name: config
               mountPath: /config
+            - name: media
+              mountPath: /media
+              subPath: media
           securityContext:
             allowPrivilegeEscalation: false
       volumes:
@@ -55,3 +58,6 @@ spec:
         - name: config
           persistentVolumeClaim:
             claimName: bazarr-config
+        - name: media
+          persistentVolumeClaim:
+            claimName: media-data

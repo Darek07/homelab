@@ -14,6 +14,7 @@ Some app settings aren't configurable via manifests/env vars and must be set onc
 
 ```sh
 kubectl exec -n media deploy/radarr -- mkdir -p /data/media/movies
+kubectl exec -n media deploy/sonarr -- mkdir -p /data/media/series
 ```
 
 Since it's shared storage, a folder only needs to be created once — it's immediately visible to every app that mounts the volume.
@@ -26,7 +27,7 @@ Config → Folders:
 
 Config → Categories:
 - `movies` → Folder: `movies`
-- `tv` → Folder: `tv`
+- `series` → Folder: `series`
 - `audio` → Folder: `audio`
 - `books` → Folder: `books`
 
@@ -39,6 +40,19 @@ Settings → Download Clients → Add SABnzbd:
 - Host: `sabnzbd` (in-cluster service name), Port: `8080`
 - API Key: from sabnzbd's Config → General
 - Category: `movies`
+
+Settings → Indexers:
+- Add indexers directly, or sync from Prowlarr once it's added to the stack
+
+### sonarr
+
+Settings → Media Management → Root Folders:
+- Add `/data/media/series`
+
+Settings → Download Clients → Add SABnzbd:
+- Host: `sabnzbd` (in-cluster service name), Port: `80`
+- API Key: from sabnzbd's Config → General
+- Category: `series`
 
 Settings → Indexers:
 - Add indexers directly, or sync from Prowlarr once it's added to the stack

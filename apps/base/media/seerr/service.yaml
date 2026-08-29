@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: seerr
+  name: seerr
+  namespace: media
+spec:
+  ports:
+    - name: web
+      port: 80
+      protocol: TCP
+      targetPort: 5055
+  selector:
+    app: seerr
+  type: ClusterIP

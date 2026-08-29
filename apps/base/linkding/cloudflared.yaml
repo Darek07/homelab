@@ -18,7 +18,8 @@ spec:
           - name: net.ipv4.ping_group_range
             value: "65532 65532"
       containers:
-        - image: cloudflare/cloudflared:latest
+        - image: cloudflare/cloudflared:2026.8.2
+          imagePullPolicy: IfNotPresent
           name: cloudflared
           env:
             # Defines an environment variable for the tunnel token.
@@ -43,6 +44,6 @@ spec:
               # it has an active connection to Cloudflare's network.
               path: /ready
               port: 2000
-            failureThreshold: 1
+            failureThreshold: 3
             initialDelaySeconds: 10
             periodSeconds: 10

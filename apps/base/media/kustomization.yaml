@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: media
 
 resources:
+  - cloudflared.yaml
   - namespace.yaml
   - pvc-data.yaml
 

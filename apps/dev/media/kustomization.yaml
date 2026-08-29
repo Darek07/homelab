@@ -9,3 +9,4 @@ resources:
   - sabnzbd/
   - seerr/
   - sonarr/
+  - tunnel-token.yaml

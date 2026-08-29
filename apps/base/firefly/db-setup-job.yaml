@@ -10,7 +10,7 @@ spec:
       restartPolicy: OnFailure
       containers:
         - name: firefly-db-setup
-          image: mariadb:12.3.2
+          image: mariadb:12.3.3
           command: ["/bin/bash", "/scripts/db-setup.sh"]
           env:
             - name: MARIADB_ROOT_PASSWORD

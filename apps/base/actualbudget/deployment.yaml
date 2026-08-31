@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: actualbudget
+  name: actualbudget
+  namespace: actualbudget
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: actualbudget
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: actualbudget
+    spec:
+      containers:
+        - image: ghcr.io/actualbudget/actual:26.8.1-alpine
+          name: actual
+          ports:
+            - containerPort: 5006
+          livenessProbe:
+            exec:
+              command: ["node", "scripts/health-check.js"]
+            initialDelaySeconds: 20
+            periodSeconds: 60
+            timeoutSeconds: 10
+            failureThreshold: 3
+          resources: {}
+          volumeMounts:
+            - name: data
+              mountPath: /data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: actualbudget-data

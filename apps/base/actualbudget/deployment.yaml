@@ -16,6 +16,10 @@ spec:
       labels:
         app: actualbudget
     spec:
+      securityContext:
+        fsGroup: 1001
+        runAsUser: 1001
+        runAsGroup: 1001
       containers:
         - image: ghcr.io/actualbudget/actual:26.8.1-alpine
           name: actual
@@ -29,6 +33,8 @@ spec:
             timeoutSeconds: 10
             failureThreshold: 3
           resources: {}
+          securityContext:
+            allowPrivilegeEscalation: false
           volumeMounts:
             - name: data
               mountPath: /data

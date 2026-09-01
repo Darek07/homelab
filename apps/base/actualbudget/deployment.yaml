@@ -34,10 +34,10 @@ spec:
             failureThreshold: 3
           resources:
             limits:
-              memory: 64Gi
+              memory: 64Mi
             requests:
               cpu: 10
-              memory: 64Gi
+              memory: 64Mi
           securityContext:
             allowPrivilegeEscalation: false
           volumeMounts:

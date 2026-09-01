@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: tunnel-token
+    namespace: actualbudget
+data:
+    token: ENC[AES256_GCM,data:nCdSybSNDyxeEJxvlJu9QU2R7cXq6SsxOdMGoto0l9Dc0T/L105uXY69hcucZzgGOXoZ13v+5oqvsFmqxm0HWOXxbJPvsZY23PQVm1+GF289SeSvtICmTL2jXOBLVlWsGXQUkYtT/er57QjbrOgk4AGNtAdnNbegTfkFOY9ZwDkBjFKBl44Cf7ilj7/7M5gDjAyDjI1ZXaN6lmfMbGjon4WqW5ooed2iIt7ZNnLFd5/STuHADVThI5ikgbgUkCmCK0Y3OqLPNDARkXP4UJ3R3R9NYGdAhuoPXcxhpSCAR6IlRO52zcqRSYUpfCh0GMvMyVKTbyTdxkA=,iv:iKc7kLsOhaprtkdolFKhorMPneAJ98xBEYwPbLeB6/w=,tag:BCEjnMreuvssxjuATk+mqQ==,type:str]
+sops:
+    age:
+        - enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBhaC9CSW1oMHRLWWZuZkhx
+            QlJBRHBPd3dGRkxzWXFEWGVWcVZBQUtOL2tnCjRwbzhrNXZmQ0Z1Y0xxeElrK0N2
+            V3ZDUjAzdSsvQ1lVeURURVdJby9IVjgKLS0tIGxXN3NVaW94RUpubGNnZytibGcv
+            S1Q3Q0FjZDFiM2Z3SVk0RTAwSmVnQ0UKXbZI8WQqsJSsFq0BmDVYO0Sss8r4MTCm
+            J1A+xFMmZfz/dlnzHp65AMSuejS9HjpWy5FEcQJAQrcoJRlNW6MzRw==
+            -----END AGE ENCRYPTED FILE-----
+          recipient: age1hxvwy0vc4qr24t8wwmxs66vgz47t2rnepe9wy524v5xnk8r8mswq9gpe5l
+    encrypted_regex: ^(data|stringData)$
+    lastmodified: "2026-09-01T14:21:14Z"
+    mac: ENC[AES256_GCM,data:YspAlS2yXgYQDOA6wyuDAsad3/aFcWxM4O7E1U0mzawDCURtKfPP8SP5wSJv+EZVjdjLXpXDU4d6zsxJlKYHeBmC8+le7+9+CQCQrAcT7q8pJX/Cvpq4YQhjt9EXyLPytqQBEgH4PW/H9VcTix9NUVr4vAqoJea9RAHc47Zw8sY=,iv:iZh6o7zXNMobVMs9266rSQP4um8LsCfEo+LvKxfXlv4=,tag:A/+Bt1qaoXKk/DdB7XEl5Q==,type:str]
+    version: 3.13.2

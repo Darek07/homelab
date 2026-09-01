@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: actualbudget
 
 resources:
+  - cloudflared.yaml
   - deployment.yaml
   - namespace.yaml
   - pvc-data.yaml

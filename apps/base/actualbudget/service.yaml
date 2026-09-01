@@ -12,5 +12,5 @@ spec:
     protocol: TCP
     targetPort: 5006
   selector:
-    app: name
+    app: actualbudget
   type: ClusterIP

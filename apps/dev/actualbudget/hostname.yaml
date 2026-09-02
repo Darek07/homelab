@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: actualbudget-hostname
+data:
+    ACTUAL_HOSTNAME: ENC[AES256_GCM,data:5jn92ywtRp1n0oPo7G5JZ/vSV8m9loEP2jEM0xZTODT9gpV5TDfJqTDmRkU6uOl6SOsWJA==,iv:bVc11oM5dP1OPxW0F3W+F7eLhQH1E55hvlWRSFdzkw4=,tag:mmYN5Hd5e5IKgF7FfPZf4A==,type:str]
+sops:
+    age:
+        - enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB4TGNVK3ZrYS9WU2lFOHAx
+            OVN2cVVIMEwyYUpWUnJUZGJqVmtLWWVDaHlnCmx0VFNhWUhLWmdNaWQzVzNuaVNZ
+            WUp4QlNFSnhUaUJKckhNWk9uZXpqVTgKLS0tIFA1NVEyQThmZXh6dTkxM2l0bWhr
+            dVBydlErZk1TaUtrQktCY01GSTUyRjgKymRuDdPsWfYaSieN6VDEJOURREJA4FhA
+            AfyNMLMN/ojGLbQj4vbdXmsPXZAk5zTqHRselp5k9QVK1sJZsJeXGA==
+            -----END AGE ENCRYPTED FILE-----
+          recipient: age1hxvwy0vc4qr24t8wwmxs66vgz47t2rnepe9wy524v5xnk8r8mswq9gpe5l
+    encrypted_regex: ^(data|stringData)$
+    lastmodified: "2026-09-02T20:17:39Z"
+    mac: ENC[AES256_GCM,data:iefSw9ZuTIzXLspbAbicCCTkCd4dvxMhBu491CuQ/VJjD1jiXn1cJUK7OVZoSRBS96NSh5vnW0aWB6ovyJxUB3d2rbHA164DF357Ay/JV8d+Q+KGp6jS3lThA9L74ZHJU21GcOpm0nA06a6Lue8Q4MTUTxop1gb/KuMvl7aqizM=,iv:WTTThIrq2ro4R8AfWZweFVQLJ4pa0dEAj+RiWkCO3SY=,tag:bAluBL6WJeOtmSHCnf+lOw==,type:str]
+    version: 3.13.2

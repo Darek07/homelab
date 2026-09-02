@@ -5,6 +5,9 @@
       "\\.yaml$"
     ]
   },
+  "registryAliases": {
+    "lscr.io": "ghcr.io"
+  },
   "assignees": [
     "Darek07"
   ]

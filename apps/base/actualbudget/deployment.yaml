@@ -21,7 +21,7 @@ spec:
         runAsUser: 1001
         runAsGroup: 1001
       containers:
-        - image: ghcr.io/actualbudget/actual:26.8.1-alpine
+        - image: ghcr.io/actualbudget/actual:26.9.0-alpine
           name: actual
           ports:
             - containerPort: 5006

@@ -8,6 +8,14 @@
   "registryAliases": {
     "lscr.io": "ghcr.io"
   },
+  "packageRules": [
+    {
+      "groupName": "fluxcd",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["ghcr.io/fluxcd/*"],
+      "separateMajorMinor": false
+    }
+  ],
   "assignees": [
     "Darek07"
   ]

@@ -3,11 +3,4 @@ kind: Kustomization
 
 resources:
   - ../../base/actualbudget
-  - hostname.yaml
   - tunnel-token.yaml
-
-patches:
-  - path: deployment-patch.yaml
-    target:
-      kind: Deployment
-      name: actualbudget

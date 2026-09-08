@@ -5,9 +5,6 @@
       "\\.yaml$"
     ]
   },
-  "registryAliases": {
-    "lscr.io": "ghcr.io"
-  },
   "packageRules": [
     {
       "groupName": "fluxcd",

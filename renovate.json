@@ -13,10 +13,14 @@
       "groupName": "fluxcd",
       "matchPackageNames": ["ghcr.io/fluxcd/*", "fluxcd/flux2"],
       "separateMajorMinor": false
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["ghcr.io/linuxserver/*"],
+      "versioning": "regex:^v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?:\\.(?<build>\\d+))?-ls(?<revision>\\d+)$"
     }
   ],
   "assignees": [
     "Darek07"
   ]
 }
-

@@ -30,7 +30,7 @@ spec:
             - name: run
               mountPath: /run
       containers:
-        - image: lscr.io/linuxserver/radarr:6.3.0.10514-ls313
+        - image: lscr.io/linuxserver/radarr:6.3.0.10514-ls315
           name: radarr
           ports:
             - containerPort: 7878

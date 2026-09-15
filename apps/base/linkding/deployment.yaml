@@ -27,6 +27,12 @@ spec:
           envFrom:
             - secretRef:
                 name: linkding
+          resources:
+            limits:
+              memory: 192Mi
+            requests:
+              cpu: 10m
+              memory: 192Mi
           securityContext:
             allowPrivilegeEscalation: false
       volumes:

@@ -48,6 +48,12 @@ spec:
               mountPath: /config
             - name: data
               mountPath: /data
+          resources:
+            limits:
+              memory: 272Mi
+            requests:
+              cpu: 3m
+              memory: 272Mi
           securityContext:
             allowPrivilegeEscalation: false
       volumes:

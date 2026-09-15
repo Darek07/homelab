@@ -49,6 +49,12 @@ spec:
             - name: usenet
               mountPath: /data/usenet
               subPath: usenet
+          resources:
+            limits:
+              memory: 768Mi
+            requests:
+              cpu: 5m
+              memory: 768Mi
           securityContext:
             allowPrivilegeEscalation: false
       volumes:

@@ -35,6 +35,12 @@ spec:
             - name: media
               mountPath: /media
               subPath: media
+          resources:
+            limits:
+              memory: 640Mi
+            requests:
+              cpu: 15m
+              memory: 640Mi
           securityContext:
             allowPrivilegeEscalation: false
       volumes:

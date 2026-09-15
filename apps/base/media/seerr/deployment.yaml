@@ -53,6 +53,12 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /app/config
+          resources:
+            limits:
+              memory: 384Mi
+            requests:
+              cpu: 5m
+              memory: 384Mi
           securityContext:
             allowPrivilegeEscalation: false
       volumes:

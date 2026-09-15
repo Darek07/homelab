@@ -34,7 +34,6 @@ spec:
           name: radarr
           ports:
             - containerPort: 7878
-          resources: {}
           envFrom:
             - configMapRef:
                 name: media-permissions

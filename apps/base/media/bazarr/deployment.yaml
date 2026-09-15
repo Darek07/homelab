@@ -34,7 +34,6 @@ spec:
           name: bazarr
           ports:
             - containerPort: 6767
-          resources: {}
           envFrom:
             - configMapRef:
                 name: media-permissions

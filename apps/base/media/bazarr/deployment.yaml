@@ -50,10 +50,10 @@ spec:
               subPath: media
           resources:
             limits:
-              memory: 256Mi
+              memory: 320Mi
             requests:
               cpu: 5m
-              memory: 256Mi
+              memory: 320Mi
           securityContext:
             allowPrivilegeEscalation: false
       volumes:

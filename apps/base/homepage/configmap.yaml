@@ -16,10 +16,25 @@ data:
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |
-    - Developer:
-        - Github:
+    - Portfolio:
+        - Darek07:
             - abbr: GH
-              href: https://github.com/
+              icon: github-light.png
+              href: https://github.com/Darek07
+        - Homelab:
+            - abbr: GH
+              icon: homelable.png
+              href: https://github.com/Darek07/homelab
+        - ACA:
+            - abbr: GH
+              icon: azure-bicep.png
+              href: https://github.com/Darek07/azure-container-apps
+              description: Azure Container Apps by Bicep
+    - Appearance:
+        - Substack:
+            - abbr: Sub
+              icon: substack.png
+              href: https://substack.com/@darek07
   services.yaml: |
     - My First Group:
         - My First Service:

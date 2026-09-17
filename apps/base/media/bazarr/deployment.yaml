@@ -30,7 +30,7 @@ spec:
             - name: run
               mountPath: /run
       containers:
-        - image: lscr.io/linuxserver/bazarr:v1.6.0-ls360
+        - image: lscr.io/linuxserver/bazarr:v1.6.1-ls364
           name: bazarr
           ports:
             - containerPort: 6767

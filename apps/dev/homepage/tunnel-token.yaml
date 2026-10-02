@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Secret
 metadata:
     name: tunnel-token
+    namespace: homepage
 data:
     token: ENC[AES256_GCM,data:VroE+QWx/w9JMAGmDDvXL6s4O231u2oJLRHBeqE6f4ICcbf4BmreEPHCTUFkhNq6KAs4z1dClVWK1OJAlmC7jINuCzfAPnSZV4RwPcreb7zql56xiECTILr5REq1ShWbHNJOxqLODD7y8C9shHV/WCXXNJ3gs7+LzxKj/G2glXtZqrJdMGFwSFpQjxXGHuqPFsKLu4O1Eji3kouPCeo5G4X3ldil9fplO+kXbF69HnW23rbOC8gQ/ybEYcebukvAEyccqkaJEN/N5i/Gp+ZxYHFUyzk/Q+urXj2+LdC+TX0c8lIUHWunf3DfoZblErmCq9yPvZvYNBY=,iv:+C/IduJGnNX5TKcNTojGQfKhz7K/y9qfLndda0zMxNg=,tag:NnMozkZUMlTaj98IECVhHA==,type:str]
 sops:

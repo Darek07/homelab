@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: homepage
 
 resources:
+  - cloudflared.yaml
   - clusterrole.yaml
   - clusterrolebinding.yaml
   - configmap.yaml

@@ -25,7 +25,9 @@
       "matchHost": "ghcr.io",
       "hostType": "docker",
       "username": "Darek07",
-      "password": "{{ secrets.GHCR_TOKEN }}"
+      "password": "{{ secrets.GHCR_TOKEN }}",
+      "concurrentRequestLimit": 2,
+      "maxRequestsPerSecond": 8
     }
   ],
   "assignees": [

@@ -26,7 +26,7 @@
       "hostType": "docker",
       "username": "Darek07",
       "password": "{{ secrets.GHCR_TOKEN }}",
-      "concurrentRequestLimit": 2,
+      "concurrentRequestLimit": 1,
       "maxRequestsPerSecond": 8
     }
   ],

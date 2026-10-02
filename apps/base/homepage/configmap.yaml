@@ -18,38 +18,62 @@ data:
   bookmarks.yaml: |
     - Portfolio:
         - Darek07:
-            - abbr: GH
-              icon: github-light.png
+            - icon: github-light.png
               href: https://github.com/Darek07
         - Homelab:
-            - abbr: GH
-              icon: homelable.png
+            - icon: homelable.png
               href: https://github.com/Darek07/homelab
         - ACA:
-            - abbr: GH
-              icon: azure-bicep.png
+            - icon: azure-bicep.png
               href: https://github.com/Darek07/azure-container-apps
               description: Azure Container Apps by Bicep
     - Appearance:
         - Substack:
-            - abbr: Sub
-              icon: substack.png
+            - icon: si-substack-#FF6719
               href: https://substack.com/@darek07
   services.yaml: |
-    - My First Group:
-        - My First Service:
-            href: http://localhost/
-            description: Homepage is awesome
+    - Management:
+        - Actual Budget:
+            href: https://actualbudget.kaermorhenlab.org
+            description: Finance manager
+            icon: actual-budget.png
+        - Linkding:
+            href: https://linkding.kaermorhenlab.org
+            description: Bookmarks manager
+            icon: linkding.png
 
-    - My Second Group:
-        - My Second Service:
-            href: http://localhost/
-            description: Homepage is the best
+    - Entertainment:
+        - Jellyfin:
+            href: https://jellyfin.kaermorhenlab.org
+            description: Media server
+            icon: jellyfin.png
+        - Seerr:
+            href: https://seerr.kaermorhenlab.org
+            description: Media discovery
+            icon: seerr.png
+        - Radarr:
+            href: http://radarr.local
+            description: Movie collection manager
+            icon: radarr.png
+        - Sonarr:
+            href: http://sonarr.local
+            description: Series collection manager
+            icon: sonarr.png
+        - Bazarr:
+            href: http://bazarr.local
+            description: Subtitles manager
+            icon: bazarr.png
+        - Sabnzbd:
+            href: http://sabnzbd.local
+            description: Binary newsreader for Usenet
+            icon: sabnzbd.png
 
-    - My Third Group:
-        - My Third Service:
-            href: http://localhost/
-            description: Homepage is 😎
+    - Tools:
+        - Grafana:
+            href: http://grafana.local
+            description: Monitoring
+            icon: grafana.png
+
   widgets.yaml: |
     - kubernetes:
         cluster:
@@ -69,8 +93,10 @@ data:
         cpu: true
         memory: true
         network: default
+        disk: /
     - search:
-        provider: duckduckgo
+        provider: google
+        showSearchSuggestions: true
         target: _blank
   docker.yaml: ""
   proxmox.yaml: ""

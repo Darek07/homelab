@@ -20,7 +20,16 @@
       "versioning": "regex:^v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?:\\.(?<build>\\d+))?-ls(?<revision>\\d+)$"
     }
   ],
+  "hostRules": [
+    {
+      "matchHost": "ghcr.io",
+      "hostType": "docker",
+      "username": "Darek07",
+      "password": "{{ secrets.GHCR_TOKEN }}"
+    }
+  ],
   "assignees": [
     "Darek07"
   ]
+
 }

@@ -4,7 +4,6 @@ kind: Kustomization
 namespace: homepage
 
 resources:
-  - authsecret.yaml
   - clusterrole.yaml
   - clusterrolebinding.yaml
   - configmap.yaml

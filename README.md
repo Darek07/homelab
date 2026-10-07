@@ -49,7 +49,6 @@ Node 1 (the laptop) runs as the control plane and is tainted to reject app workl
 
 - **Secrets** are encrypted using **SOPS** with [age](https://github.com/FiloSottile/age) and stored safely in Git.
 - **Public access** to selected apps is provided via **Cloudflare Tunnel**.
-  - Domain details are intentionally not shared to avoid unnecessary exposure and traffic.
 
 ## Notes
 

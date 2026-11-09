@@ -1,0 +1,92 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: kestra
+  name: kestra
+  namespace: kestra
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kestra
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: kestra
+    spec:
+      # Kestra waits up to 5m for running tasks on shutdown.
+      terminationGracePeriodSeconds: 360
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+        runAsGroup: 1000
+      containers:
+        - name: kestra
+          image: kestra/kestra:v2.0.8
+          args:
+            - server
+            - standalone
+          env:
+            - name: KESTRA_CONFIGURATION
+              valueFrom:
+                configMapKeyRef:
+                  name: kestra-config
+                  key: application.yaml
+            - name: JAVA_OPTS
+              value: "-XX:MaxRAMPercentage=60"
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: kestra-postgres
+                  key: POSTGRES_USER
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: kestra-postgres
+                  key: POSTGRES_PASSWORD
+          ports:
+            - name: http
+              containerPort: 8080
+            - name: management
+              containerPort: 8081
+          startupProbe:
+            httpGet:
+              path: /health/liveness
+              port: management
+            periodSeconds: 10
+            failureThreshold: 30
+          livenessProbe:
+            httpGet:
+              path: /health/liveness
+              port: management
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health/readiness
+              port: management
+            periodSeconds: 10
+            timeoutSeconds: 5
+          resources:
+            limits:
+              memory: 2Gi
+            requests:
+              cpu: 100m
+              memory: 2Gi
+          securityContext:
+            allowPrivilegeEscalation: false
+          volumeMounts:
+            - name: storage
+              mountPath: /app/storage
+            - name: tmp
+              mountPath: /tmp/kestra-wd
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: kestra-storage
+        - name: tmp
+          emptyDir: {}

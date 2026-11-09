@@ -73,6 +73,10 @@ data:
             href: http://grafana.local
             description: Monitoring
             icon: grafana.png
+        - Kestra:
+            href: http://kestra.local
+            description: Workflow orchestration
+            icon: kestra.png
 
   widgets.yaml: |
     - kubernetes:

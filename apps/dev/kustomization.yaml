@@ -6,5 +6,6 @@ resources:
   # - audiobookshelf
   - firefly
   - homepage
+  - kestra
   - linkding
   - media
